@@ -1,18 +1,17 @@
 __author__ = 'phongtrinh'
-from pack.Login import *
 import unittest
 from selenium import webdriver
+from pack.Login import *
 
-class Test(unittest.TestCase, Login):
+class Test_login(unittest.TestCase, Login):
 
     def setUp(self):
         self.driver = webdriver.Firefox()
         self.driver.maximize_window()
         self.url = 'https://google.com'
 
-    def test(self):
+    def test_click(self):
         session = Login(self.driver,self.url)
-        session.click()
         session.login()
 
     def tearDown(self):
